@@ -8,6 +8,7 @@ function Spam() {
     client.guilds.first().members.find('id', '107544010687545344').send('Normal?'); //Andrey
     client.guilds.first().members.find('id', '108560701366210560').send('Dopili menya!'); //Me
 };
+
 client.on('ready', () => {
     console.log('Dorou');
 });
@@ -20,6 +21,13 @@ client.on('message', (message) => {
         case message.content.startsWith(prefix+'spam'):
         Spam();
         console.log('>spam');
-        break;        
+        break; 
     }
-})
+});
+
+client.on('message', message => {
+    if (message.content.startsWith(prefix+'ava')) {
+        message.reply(message.author.avatarURL);
+        console.log('>ava');
+    }
+});
