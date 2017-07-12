@@ -37,4 +37,11 @@ client.on('message', message => {
         message.channel.send('http://dogcatfan.com/uploads/posts/2016-11/1480462125_pug.jpg');
        console.log('>mops');
     }
-})
+});
+
+client.on('message', message => {
+    if (message.content.startsWith(prefix+'samokat')) {
+        message.channel.send('https://www.youtube.com/watch?v=qQ1H9WtratY');
+        console.log('>samokat')
+    }
+});
