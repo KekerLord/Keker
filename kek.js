@@ -31,3 +31,10 @@ client.on('message', message => {
         console.log('>ava');
     }
 });
+
+client.on('message', message => {
+    if (message.content.startsWith(prefix+'mops')) {
+        message.channel.send('http://dogcatfan.com/uploads/posts/2016-11/1480462125_pug.jpg');
+       console.log('>mops');
+    }
+})
