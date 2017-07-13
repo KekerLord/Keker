@@ -25,6 +25,11 @@ function Mops(message) {
     console.log('>mops');
 };
 
+function Video(message) {
+    message.channel.send(message.content);
+    console.log('>video');
+};
+
 client.on('ready', () => {
     console.log('Dorou');
 });
@@ -45,6 +50,9 @@ client.on('message', (message) => {
         break;
         case message.content.startsWith(prefix+'mops'):
         Mops(message);
+        break;
+        case message.content.startsWith(prefix+'video'):
+        Video(message);
         break;
     }
 });
