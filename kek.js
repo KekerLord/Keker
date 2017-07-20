@@ -3,6 +3,10 @@ const client = new Discord.Client();
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 const prefix = '.';
+const google = require('googleapis');
+const urlshortener = google.urlshortener('v1');
+
+
 
 function Spam() {
     client.guilds.first().members.find('id', '107544010687545344').send('Normal?'); //Andrey
@@ -26,12 +30,18 @@ function Mops(message) {
 };
 
 function Video(message) {
-    message.channel.send(message.content);
+    message.channel.send(message.content.split(' ').slice(1));
     console.log('>video');
 };
 
-client.on('ready', () => {
-    console.log('Dorou');
+function Assist(message) {
+    message.channel.send('СПИСОК КОМАНД \n`.spam` - отправляю Паше и Дрюхе сообщение \n `.ava` - ваша ава \n `.samokat` - видос скину \n `.mops` - спешл для Лёхи (но вы тоже можете юзать) \n `.vidos` - повторю ваше сообщение \n `.assist` - хелпану с командами');
+    console.log('>assist');
+};
+
+client.on("ready", () => {
+  client.user.setGame(`.assisst for help`);
+  console.log(`.assist for help`);
 });
 
 client.login(config.token);
@@ -53,6 +63,12 @@ client.on('message', (message) => {
         break;
         case message.content.startsWith(prefix+'video'):
         Video(message);
+        break;
+        case message.content.startsWith(prefix+'vidos'):
+        Vidos(message);
+        break;
+        case message.content.startsWith(prefix+'assist'):
+        Assist(message);
         break;
     }
 });
