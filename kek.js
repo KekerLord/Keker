@@ -25,13 +25,13 @@ function Mops(message) {
     console.log('>mops');
 };
 
-function Video(message) {
+function Povtor(message) {
     message.channel.send(message.content.split(' ').slice(1));
-    console.log('>video');
+    console.log('>povtor');
 };
 
 function Assist(message) {
-    message.channel.send('СПИСОК КОМАНД \n`.spam` - отправляю Паше и Дрюхе сообщение \n `.ava` - ваша ава \n `.samokat` - видос скину \n `.mops` - спешл для Лёхи (но вы тоже можете юзать) \n `.vidos` - повторю ваше сообщение \n `.assist` - хелпану с командами');
+    message.channel.send('СПИСОК КОМАНД \n`.spam` - отправляю Паше и Дрюхе сообщение \n `.ava` - ваша ава \n `.samokat` - видос скину \n `.mops` - спешл для Лёхи (но вы тоже можете юзать) \n `.povtor` - повторю ваше сообщение \n `.assist` - хелпану с командами');
     console.log('>assist');
 };
 
@@ -57,8 +57,8 @@ client.on('message', (message) => {
         case message.content.startsWith(prefix+'mops'):
         Mops(message);
         break;
-        case message.content.startsWith(prefix+'video'):
-        Video(message);
+        case message.content.startsWith(prefix+'povtor'):
+        Povtor(message);
         break;
         case message.content.startsWith(prefix+'vidos'):
         Vidos(message);
