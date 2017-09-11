@@ -3,10 +3,6 @@ const client = new Discord.Client();
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 const prefix = '.';
-const google = require('googleapis');
-const urlshortener = google.urlshortener('v1');
-
-
 
 function Spam() {
     client.guilds.first().members.find('id', '107544010687545344').send('Normal?'); //Andrey
