@@ -31,7 +31,7 @@ function Mops(message) {
 
 function Video(message) {
     message.channel.send(message.content.split(' ').slice(1));
-    console.log('>video');
+    console.log('>video'); 
 };
 
 function Assist(message) {
